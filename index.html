@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tréningový plán a zdravá strava</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .section { margin-bottom: 20px; }
+        .card { border: 1px solid #ccc; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .hidden { display: none; }
+    </style>
+    <script>
+        function showRecipe(meal) {
+            const recipes = {
+                "Avokádový toast": "Ingrediencie: 1 avokádo, 1 krajček celozrnného chleba, soľ, citrónová šťava, čierne korenie.",
+                "Ovsená kaša": "Ingrediencie: 50g ovsených vločiek, 200ml mlieka, 1 lyžička medu, ovocie podľa chuti.",
+                "Proteínové palacinky": "Ingrediencie: 2 vajcia, 50g ovsených vločiek, 100ml mlieka, 1 odmerka proteínu, kokosový olej.",
+                "Šošovicová polievka": "Ingrediencie: 200g šošovice, 1 cibuľa, 2 mrkvy, 1 zemiak, 1 lyžica oleja, soľ, korenie."
+            };
+            document.getElementById("recipe-content").innerText = recipes[meal] || "Recept čoskoro dostupný.";
+            document.getElementById("recipe-card").classList.remove("hidden");
+        }
+        function closeRecipe() {
+            document.getElementById("recipe-card").classList.add("hidden");
+        }
+    </script>
+</head>
+<body>
+    <h1>Tréningový plán</h1>
+    <div class="section">
+        <h2>Pondelok - Nohy</h2>
+        <div class="card">
+            <ul>
+                <li>Drepy</li>
+                <li>Výpady</li>
+                <li>Mŕtvy ťah</li>
+                <li>Leg press</li>
+                <li>Rumunský mŕtvy ťah</li>
+            </ul>
+        </div>
+        <h2>Utorok - Hrudník</h2>
+        <div class="card">
+            <ul>
+                <li>Bench press</li>
+                <li>Kľuky</li>
+                <li>Rozpažovanie</li>
+                <li>Incline bench press</li>
+                <li>Stláčanie jednoručiek</li>
+            </ul>
+        </div>
+        <h2>Streda - Chrbát</h2>
+        <div class="card">
+            <ul>
+                <li>Zhyby</li>
+                <li>Veslovanie</li>
+                <li>Mŕtvy ťah</li>
+                <li>Lat pulldown</li>
+                <li>Hyperextenzia</li>
+            </ul>
+        </div>
+        <h2>Štvrtok - Ramená</h2>
+        <div class="card">
+            <ul>
+                <li>Arnold press</li>
+                <li>Bočné zdvihy</li>
+                <li>Predpažovanie</li>
+                <li>Face pulls</li>
+                <li>Military press</li>
+            </ul>
+        </div>
+        <h2>Piatok - Kardio</h2>
+        <div class="card">
+            <ul>
+                <li>Beh</li>
+                <li>Švihadlo</li>
+                <li>HIIT tréning</li>
+                <li>Schody</li>
+                <li>Cyklistika</li>
+            </ul>
+        </div>
+    </div>
+    
+    <h1>Zdravá strava</h1>
+    <div class="section">
+        <h2>Slané jedlá</h2>
+        <div class="card">
+            <ul>
+                <li><button onclick="showRecipe('Avokádový toast')">Avokádový toast</button></li>
+                <li><button onclick="showRecipe('Tuniakový šalát')">Tuniakový šalát</button></li>
+                <li><button onclick="showRecipe('Grécky šalát')">Grécky šalát</button></li>
+                <li><button onclick="showRecipe('Vaječná praženica')">Vaječná praženica</button></li>
+                <li><button onclick="showRecipe('Špenátová omeleta')">Špenátová omeleta</button></li>
+                <li><button onclick="showRecipe('Cícerová nátierka')">Cícerová nátierka</button></li>
+                <li><button onclick="showRecipe('Pečené batáty')">Pečené batáty</button></li>
+                <li><button onclick="showRecipe('Losos s avokádom')">Losos s avokádom</button></li>
+                <li><button onclick="showRecipe('Tofu so zeleninou')">Tofu so zeleninou</button></li>
+                <li><button onclick="showRecipe('Hummus s chlebom')">Hummus s chlebom</button></li>
+            </ul>
+        </div>
+        <h2>Sladké jedlá</h2>
+        <div class="card">
+            <ul>
+                <li><button onclick="showRecipe('Ovsená kaša')">Ovsená kaša</button></li>
+                <li><button onclick="showRecipe('Proteínové palacinky')">Proteínové palacinky</button></li>
+                <li><button onclick="showRecipe('Banánový chlebík')">Banánový chlebík</button></li>
+                <li><button onclick="showRecipe('Smoothie bowl')">Smoothie bowl</button></li>
+                <li><button onclick="showRecipe('Tvarohový koláč')">Tvarohový koláč</button></li>
+                <li><button onclick="showRecipe('Chia puding')">Chia puding</button></li>
+                <li><button onclick="showRecipe('Jablkové lievance')">Jablkové lievance</button></li>
+                <li><button onclick="showRecipe('Ryžový puding')">Ryžový puding</button></li>
+                <li><button onclick="showRecipe('Datlové guľky')">Datlové guľky</button></li>
+                <li><button onclick="showRecipe('Čokoládový smoothie')">Čokoládový smoothie</button></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="recipe-card" class="card hidden">
+        <h2>Recept</h2>
+        <p id="recipe-content"></p>
+        <button onclick="closeRecipe()">Zatvoriť</button>
+    </div>
+</body>
+</html>
